@@ -1,0 +1,659 @@
+@import 'media';
+
+@maincolor: #cc0000;
+@bgcolor-main: #fff;
+@black: black;
+
+@border: 1px solid #d9d9d4;
+
+* {
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: @bgcolor-main;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.wrapper{
+    height: 100%;
+}
+
+.content {
+    min-height: 100%;
+    padding-bottom: 552px;
+    max-width: 100%;
+
+    //&:after {
+    //    content: "";
+    //    display: block;
+    //    height: 450px;
+    //}
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @media @phone-strict, @tablet-strict {
+        margin: 20px;
+    }
+}
+
+.header {
+    background-color: @bgcolor-main;
+
+    &__left, &__center, &__right {
+        float: left;
+        width: 33.3%;
+
+        @media @phone-strict {
+            float: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+    }
+    &__left {
+        margin-top: 35px;
+        margin-bottom: 35px;
+
+        @media @phone-strict {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__center {
+        display: inline-block;
+        text-align: center;
+        margin-top: 20px;
+
+        @media @phone-strict {
+            margin: 10px 0 10px 0;
+        }
+    }
+
+    &__right {
+        margin-top: 35px;
+        text-align: right;
+
+        @media @phone-strict {
+            text-align: center;
+            margin: 0;
+
+        }
+    }
+
+    &__logo-iconmain {
+        height: 22px;
+        width: 105px;
+    }
+
+    &__logo-icon {
+
+        width: 50px;
+        height: 50px;
+    }
+
+    &__right a {
+        color: @maincolor;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+}
+
+.navigation {
+    border-top: @border;
+    border-bottom: @border;
+    background-color: #f2f2ed;
+    margin-bottom: 50px;
+
+    @media @phone-strict {
+        margin-bottom: 0;
+    }
+
+    &__list {
+        float: left;
+    }
+
+    &__item {
+        display: inline-block;
+        padding-right: 20px;
+
+        @media @phone-strict {
+            padding-right: 10px;
+        }
+    }
+
+    &__link {
+        color: @maincolor;
+    }
+
+    &__textfield {
+
+        background-color: @bgcolor-main;
+
+        border: @border;
+        width: 278px;
+        height: 38px;
+        padding-right: 40px;
+
+    }
+
+    &__form {
+        margin-top: 7px;
+        position: relative;
+        float: right;
+        width: 278px;
+        height: 38px;
+
+        @media @phone-strict {
+            margin-bottom: 0;
+        }
+    }
+
+    &__button {
+        width: 38px;
+        height: 38px;
+        background: url("../img/icons/search.svg") center no-repeat;
+        background-size: 15px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:focus {
+            border: none;
+        }
+    }
+}
+
+.maincontent {
+    background-color: @bgcolor-main;
+}
+
+//ХЛЕБНЫЕ КРОШКИ
+
+.breadcrumbs {
+    margin-bottom: 20px;
+
+    &__link {
+        font-size: 16px;
+        color: @maincolor;
+    }
+
+    &__item {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:after {
+            content: "/";
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &__item--active &__link {
+        text-decoration: none;
+        color: @black;
+    }
+
+    &__item--active:after {
+        display: none;
+    }
+
+}
+
+.product img {
+    float: left;
+    max-height: 700px;
+    max-width: 700px;
+    display: block;
+
+    @media @phone-strict {
+        float: none;
+        max-height: 250px;
+        max-width: 250px;
+        margin-left: 15px;
+    }
+
+    @media @tablet-strict {
+        float: none;
+        display: inline-block;
+        text-align: center;
+        max-height: 600px;
+        max-width: 600px;
+        margin-left: 60px;
+    }
+}
+
+.info {
+    margin-left: 765px;
+
+    @media @phone-strict, @tablet-strict {
+        margin-left: 0 ;
+    }
+
+    &__title {
+        font-size: 36px;
+
+        @media @phone-strict {
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
+    &__price {
+        color: @maincolor;
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    &__size {
+        margin-top: 35px;
+    }
+
+    &__item {
+        position: relative;
+        height: 65px;
+        width: 65px;
+        border: 1px solid @black;
+        font-size: 36px;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 35px;
+
+        @media @phone-strict {
+            height: 48px;
+            width: 48px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        &_active {
+            position: relative;
+            height: 65px;
+            width: 65px;
+            font-size: 36px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 35px;
+            border: 3px solid @maincolor;
+            @media @phone-strict {
+                height: 48px;
+                width: 48px;
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+
+    &__link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: initial;
+        text-decoration: none;
+        color: @black;
+        width: inherit;
+    }
+
+    &__color-item {
+        height: 65px;
+        width: 65px;
+        border: 1px solid @black;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 44px;
+
+        @media @phone-strict {
+            height: 48px;
+            width: 48px;
+            margin-top: 16px;
+        }
+
+        &:hover {
+            border: 3px solid @maincolor;
+        }
+    }
+
+    &__color-yellow {
+        background-color: #e3d95e;
+    }
+
+    &__color-green {
+        background-color: #a5af96;
+    }
+
+    &__link-color {
+        display: block;
+        width: inherit;
+        height: inherit;
+    }
+
+    &__buy {
+        font-size: 36px;
+        background-color: @maincolor;
+        color: white;
+        border: none;
+        width: 202px;
+        height: 79px;
+        margin-bottom: 39px;
+        outline: none;
+        cursor: pointer;
+        @media @phone-strict {
+            font-size: 24px;
+            width: 174px;
+            height: 62px;
+        }
+    }
+
+    &__wishlist {
+        &:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+        }
+
+    }
+
+    &__link-wish {
+        text-decoration: none;
+    }
+
+    &__img {
+
+        width: 28px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+        color: #999;
+
+    }
+
+}
+
+.footer {
+    border-top: @border;
+    padding-top: 60px;
+    font-size: 14px;
+    max-width: 100%;
+    height: 430px;
+    margin-top: -430px;
+    background-color: #f2f2ed;
+
+    @media @phone-strict {
+        height: 1024px;  // надо изменить
+        padding-top: 30px;
+        max-width: 767px;
+    }
+
+    @media @tablet-strict {
+        height: 526px;
+    }
+
+    &__top {
+        border-bottom: @border;
+        padding-bottom: 60px;
+
+        @media @tablet-strict {
+            padding-bottom: 20px;
+        }
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 25px;
+
+        @media @phone-strict {
+            text-align: center;
+        }
+    }
+}
+
+.service, .about {
+    float: left;
+
+    @media @phone-strict {
+        float: none;
+    }
+}
+
+.avantages, .social {
+    float: right;
+    @media @phone-strict {
+        float: none;
+    }
+    @media @tablet-strict {
+        float: right;
+    }
+}
+
+
+
+.service__list, .about__list {
+    float: left;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 35px;
+
+    @media @phone-strict {
+        display: block;
+        float: none;
+    }
+
+}
+
+.service {
+
+    &__link {
+        text-decoration: none;
+        color: @black;
+    }
+
+    &__list-first {
+        padding-right: 45px;
+
+        @media @phone-strict {
+            padding: 0;
+        }
+    }
+
+    &__list-second {
+        padding-right: 75px;
+
+        @media @phone-strict {
+            margin: 0;
+        }
+    }
+    &__item {
+        margin-bottom: 10px;
+    }
+}
+
+.about {
+    &__link {
+        text-decoration: none;
+        color: @black;
+
+    }
+
+    &__list-first {
+        padding-right: 100px;
+    }
+
+    &__list-second {
+        margin-right: 170px;
+
+        @media @phone-strict {
+            margin: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+}
+
+.social {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+
+    @media @tablet-strict {
+        width: 165px;
+    }
+
+    &__list {
+        margin: 0;
+        @media @phone-strict, @tablet-strict {
+            display: inline-flex;
+        }
+    }
+
+    &__item {
+
+        width: 35px;
+        height: 35px;
+        margin-bottom: 22px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media @phone-strict, @tablet-strict {
+            margin-right: 15px;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__icon {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+.avantages {
+    margin-right: 155px;
+
+    @media @phone-strict {
+        margin: 0;
+    }
+
+    @media @tablet-strict {
+    float: left;
+    margin-right: 0;
+    margin-top: 20px;
+}
+
+    &__item {
+        display: flex;
+        margin-bottom: 35px;
+
+        @media @tablet-strict {
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__icon {
+        width: 45px;
+        height: 25px;
+    }
+
+    &__img, &__text {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__img {
+        margin-right: 14px;
+    }
+}
+
+//.menu {
+//    margin: 0;
+//    padding: 0;
+//    text-align: center;
+//    background: red; // red on small devices
+//
+//    @media @tablet {
+//        background: green; // green on medium devices
+//    }
+//
+//    @media @desktop {
+//        background: blue; // blue on large devices
+//    }
+//
+//    &__item {
+//        display: inline-block;
+//        list-style-type: none;
+//    }
+//
+//    &__link {
+//        color: #FFF;
+//    }
+//
+//    // Bottom Menu
+//    &_bottom { // BEM modifier example
+//        background: green;
+//    }
+//
+//    &_bottom &__link {
+//        color: #f00;
+//    }
+//}
+
+
